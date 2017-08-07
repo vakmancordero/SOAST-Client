@@ -49,17 +49,17 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class AllTallerType {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "fechRegistro", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "fechaInicio", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "idCatalagoTaller", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "idProyecto", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "nombreTaller", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "idTaller", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "nombreCapacitador", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "disponibilidad", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "descripcion", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "idPrograma", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "idCatalagoTaller", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "objetivos", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "idPrograma", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "fechRegistro", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "idTaller", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "nombreTaller", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "idProyecto", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "fechaInicio", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "descripcion", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "disponibilidad", namespace = "http://xml.netbeans.org/schema/EsquemaTallerXml", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> content;
 
@@ -91,15 +91,15 @@ public class AllTallerType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
+     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
      * {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
-     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
-     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link Integer }{@code >}
      * 

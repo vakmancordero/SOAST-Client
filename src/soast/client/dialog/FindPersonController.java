@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.TableView;
-import soast.client.service.Person;
+import soast.client.sevice.person.Person;
 
 /**
  *
@@ -28,6 +28,7 @@ public class FindPersonController implements Initializable {
     
     @FXML
     private void finish(ActionEvent event) {
+        
         this.person = this.personsTV.getSelectionModel().getSelectedItem();
         
         ((Node) event.getSource()).getScene().getWindow().hide();

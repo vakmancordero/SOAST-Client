@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "ConcessionWS", targetNamespace = "http://webservice.soast.candlelabs.com/", wsdlLocation = "http://localhost:8080/ConcessionWS?wsdl")
+@WebServiceClient(name = "ConcessionWS", targetNamespace = "http://webservice.soast.candlelabs.com/", wsdlLocation = "http://104.131.66.159:8080/ConcessionWS?wsdl")
 public class ConcessionWS_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class ConcessionWS_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/ConcessionWS?wsdl");
+            url = new URL("http://104.131.66.159:8080/ConcessionWS?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

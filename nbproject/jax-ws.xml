@@ -2,45 +2,9 @@
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services/>
   <clients>
-    <client name="PersonWS">
-      <wsdl-url>http://localhost:8080/PersonWS?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/PersonWS.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">soast.client.service</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/PersonWS?wsdl</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>soast.client.service</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
     <client name="ConcessionWS">
-      <wsdl-url>http://localhost:8080/ConcessionWS?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/ConcessionWS.wsdl</local-wsdl-file>
+      <wsdl-url>http://104.131.66.159:8080/ConcessionWS?wsdl</wsdl-url>
+      <local-wsdl-file>104.131.66.159_8080/ConcessionWS.wsdl</local-wsdl-file>
       <package-name forceReplace="true">soast.client.service.concession</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -58,7 +22,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/ConcessionWS?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://104.131.66.159:8080/ConcessionWS?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -75,8 +39,8 @@
       </wsimport-options>
     </client>
     <client name="NotificationWS">
-      <wsdl-url>http://localhost:8080/NotificationWS?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/NotificationWS.wsdl</local-wsdl-file>
+      <wsdl-url>http://104.131.66.159:8080/NotificationWS?wsdl</wsdl-url>
+      <local-wsdl-file>104.131.66.159_8080/NotificationWS.wsdl</local-wsdl-file>
       <package-name forceReplace="true">soast.client.service.notification</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -94,7 +58,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/NotificationWS?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://104.131.66.159:8080/NotificationWS?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -110,10 +74,10 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="CapacitacionWSDLService">
-      <wsdl-url>http://soa-sep.herokuapp.com/CapacitacionWSDLService?wsdl</wsdl-url>
-      <local-wsdl-file>soa-sep.herokuapp.com/CapacitacionWSDLService.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">soast.client.service.capacitacion</package-name>
+    <client name="PersonWS">
+      <wsdl-url>http://104.131.66.159:8080/PersonWS?wsdl</wsdl-url>
+      <local-wsdl-file>104.131.66.159_8080/PersonWS.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">soast.client.sevice.person</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -130,7 +94,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://soa-sep.herokuapp.com/CapacitacionWSDLService?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://104.131.66.159:8080/PersonWS?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -142,7 +106,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>soast.client.service.capacitacion</wsimport-option-value>
+          <wsimport-option-value>soast.client.sevice.person</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>
@@ -179,6 +143,42 @@
         <wsimport-option>
           <wsimport-option-name>package</wsimport-option-name>
           <wsimport-option-value>soast.client.service.curso</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="CapacitacionWSDLService">
+      <wsdl-url>http://soa-sep.herokuapp.com/CapacitacionWSDLService?wsdl</wsdl-url>
+      <local-wsdl-file>soa-sep.herokuapp.com/CapacitacionWSDLService.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">soast.client.service.capacitacion</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://soa-sep.herokuapp.com/CapacitacionWSDLService?wsdl</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>soast.client.service.capacitacion</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

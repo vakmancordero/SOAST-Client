@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "NotificationWS", targetNamespace = "http://webservice.soast.candlelabs.com/", wsdlLocation = "http://localhost:8080/NotificationWS?wsdl")
+@WebServiceClient(name = "NotificationWS", targetNamespace = "http://webservice.soast.candlelabs.com/", wsdlLocation = "http://104.131.66.159:8080/NotificationWS?wsdl")
 public class NotificationWS_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class NotificationWS_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/NotificationWS?wsdl");
+            url = new URL("http://104.131.66.159:8080/NotificationWS?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

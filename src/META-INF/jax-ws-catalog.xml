@@ -12,4 +12,8 @@
     <system systemId="http://soa-sep.herokuapp.com:80/CapacitacionWSDLService?xsd=1" uri="wsdl/soa-sep.herokuapp.com_80/CapacitacionWSDLService.xsd_1.xsd"/>
     <system systemId="http://aimos-studio.com.mx:8080/Servicios/WsdlCursoService?wsdl" uri="wsdl/aimos-studio.com.mx_8080/Servicios/WsdlCursoService.wsdl"/>
     <system systemId="http://aimos-studio.com.mx:8080/Servicios/WsdlCursoService?xsd=1" uri="wsdl/aimos-studio.com.mx_8080/Servicios/WsdlCursoService.xsd_1.xsd"/>
+    <system systemId="http://104.131.66.159:8080/ConcessionWS?wsdl" uri="wsdl/104.131.66.159_8080/ConcessionWS.wsdl"/>
+    <system systemId="http://104.131.66.159:8080/ConcessionWS?xsd=1" uri="wsdl/104.131.66.159_8080/ConcessionWS.xsd_1.xsd"/>
+    <system systemId="http://104.131.66.159:8080/NotificationWS?wsdl" uri="wsdl/104.131.66.159_8080/NotificationWS.wsdl"/>
+    <system systemId="http://104.131.66.159:8080/NotificationWS?xsd=1" uri="wsdl/104.131.66.159_8080/NotificationWS.xsd_1.xsd"/>
 </catalog>

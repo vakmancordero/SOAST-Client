@@ -8,13 +8,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -29,7 +26,6 @@ import javafx.scene.control.TableView;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import soast.client.service.Person;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -47,7 +43,7 @@ import soast.client.service.capacitacion.Capacitaciones;
 import soast.client.service.concession.Concession;
 import soast.client.service.curso.AllCurso;
 import soast.client.service.curso.AllCursoTypev2;
-import soast.client.service.curso.CursoConsultaReturn;
+import soast.client.sevice.person.Person;
 
 /**
  *
@@ -166,7 +162,7 @@ public class SOASTController implements Initializable {
                     "Se ha creado exitosamente una nueva persona! ID = " + personId + ".\n" +
                     sendNotification(
                             personId, "Secretaría de Transportes",
-                            "Usted ha sido de alta satisfactoriamente a la SCT"
+                            "Usted ha sido dado de alta satisfactoriamente a la SCT"
                     )
             ).show();
             
@@ -410,58 +406,6 @@ public class SOASTController implements Initializable {
         
         return DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
     }
-    
-    /* Concessionaire */
-    
-    private static Long createPerson(java.lang.String name, java.lang.String rfc, java.lang.String address, java.lang.String nacionality, javax.xml.datatype.XMLGregorianCalendar birthday, java.lang.String email, java.lang.String cellphone) {
-        soast.client.service.PersonWS_Service service = new soast.client.service.PersonWS_Service();
-        soast.client.service.PersonWS port = service.getPersonWSPort();
-        return port.createPerson(name, rfc, address, nacionality, birthday, email, cellphone);
-    }
-
-    private static boolean deletePerson(java.lang.Long personId) {
-        soast.client.service.PersonWS_Service service = new soast.client.service.PersonWS_Service();
-        soast.client.service.PersonWS port = service.getPersonWSPort();
-        return port.deletePerson(personId);
-    }
-
-    private static java.util.List<soast.client.service.Person> listPersons() {
-        soast.client.service.PersonWS_Service service = new soast.client.service.PersonWS_Service();
-        soast.client.service.PersonWS port = service.getPersonWSPort();
-        return port.listPersons();
-    }
-    
-    /* Concession */
-
-    private static Long createConcession(java.lang.Long idPerson, java.lang.String town, java.lang.String concessionType, javax.xml.datatype.XMLGregorianCalendar expeditionDate, javax.xml.datatype.XMLGregorianCalendar expirationDate, java.lang.String expeditionPlace, java.lang.String unitType, java.lang.String licensePlate) {
-        soast.client.service.concession.ConcessionWS_Service service = new soast.client.service.concession.ConcessionWS_Service();
-        soast.client.service.concession.ConcessionWS port = service.getConcessionWSPort();
-        return port.createConcession(idPerson, town, concessionType, expeditionDate, expirationDate, expeditionPlace, unitType, licensePlate);
-    }
-
-    private static boolean deleteConcession(java.lang.Long idConcession) {
-        soast.client.service.concession.ConcessionWS_Service service = new soast.client.service.concession.ConcessionWS_Service();
-        soast.client.service.concession.ConcessionWS port = service.getConcessionWSPort();
-        return port.deleteConcession(idConcession);
-    }
-
-    private static java.util.List<soast.client.service.concession.Concession> listConcession() {
-        soast.client.service.concession.ConcessionWS_Service service = new soast.client.service.concession.ConcessionWS_Service();
-        soast.client.service.concession.ConcessionWS port = service.getConcessionWSPort();
-        return port.listConcession();
-    }
-
-    private static String sendNotification(java.lang.Long personId, java.lang.String subject, java.lang.String message) {
-        soast.client.service.notification.NotificationWS_Service service = new soast.client.service.notification.NotificationWS_Service();
-        soast.client.service.notification.NotificationWS port = service.getNotificationWSPort();
-        return port.sendNotification(personId, subject, message);
-    }
-
-    private static Capacitacion capacitacionTipo(java.lang.String tipo) {
-        soast.client.service.capacitacion.CapacitacionWSDLService service = new soast.client.service.capacitacion.CapacitacionWSDLService();
-        soast.client.service.capacitacion.CapacitacionWSDLPortType port = service.getCapacitacionWSDLPort();
-        return port.capacitacionTipo(tipo);
-    }
 
     private void initCapacitacionSection() {
         this.capacitacionCB.getItems().addAll(
@@ -502,6 +446,58 @@ public class SOASTController implements Initializable {
                     } 
                     
         });
+    }
+    
+    /* Concessionaire */
+    
+    private static Long createPerson(java.lang.String name, java.lang.String rfc, java.lang.String address, java.lang.String nacionality, javax.xml.datatype.XMLGregorianCalendar birthday, java.lang.String email, java.lang.String cellphone) {
+        soast.client.sevice.person.PersonWS_Service service = new soast.client.sevice.person.PersonWS_Service();
+        soast.client.sevice.person.PersonWS port = service.getPersonWSPort();
+        return port.createPerson(name, rfc, address, nacionality, birthday, email, cellphone);
+    }
+
+    private static boolean deletePerson(java.lang.Long personId) {
+        soast.client.sevice.person.PersonWS_Service service = new soast.client.sevice.person.PersonWS_Service();
+        soast.client.sevice.person.PersonWS port = service.getPersonWSPort();
+        return port.deletePerson(personId);
+    }
+
+    private static java.util.List<soast.client.sevice.person.Person> listPersons() {
+        soast.client.sevice.person.PersonWS_Service service = new soast.client.sevice.person.PersonWS_Service();
+        soast.client.sevice.person.PersonWS port = service.getPersonWSPort();
+        return port.listPersons();
+    }
+    
+    /* Concession */
+
+    private static Long createConcession(java.lang.Long idPerson, java.lang.String town, java.lang.String concessionType, javax.xml.datatype.XMLGregorianCalendar expeditionDate, javax.xml.datatype.XMLGregorianCalendar expirationDate, java.lang.String expeditionPlace, java.lang.String unitType, java.lang.String licensePlate) {
+        soast.client.service.concession.ConcessionWS_Service service = new soast.client.service.concession.ConcessionWS_Service();
+        soast.client.service.concession.ConcessionWS port = service.getConcessionWSPort();
+        return port.createConcession(idPerson, town, concessionType, expeditionDate, expirationDate, expeditionPlace, unitType, licensePlate);
+    }
+
+    private static boolean deleteConcession(java.lang.Long idConcession) {
+        soast.client.service.concession.ConcessionWS_Service service = new soast.client.service.concession.ConcessionWS_Service();
+        soast.client.service.concession.ConcessionWS port = service.getConcessionWSPort();
+        return port.deleteConcession(idConcession);
+    }
+
+    private static java.util.List<soast.client.service.concession.Concession> listConcession() {
+        soast.client.service.concession.ConcessionWS_Service service = new soast.client.service.concession.ConcessionWS_Service();
+        soast.client.service.concession.ConcessionWS port = service.getConcessionWSPort();
+        return port.listConcession();
+    }
+
+    private static String sendNotification(java.lang.Long personId, java.lang.String subject, java.lang.String message) {
+        soast.client.service.notification.NotificationWS_Service service = new soast.client.service.notification.NotificationWS_Service();
+        soast.client.service.notification.NotificationWS port = service.getNotificationWSPort();
+        return port.sendNotification(personId, subject, message);
+    }
+
+    private static Capacitacion capacitacionTipo(java.lang.String tipo) {
+        soast.client.service.capacitacion.CapacitacionWSDLService service = new soast.client.service.capacitacion.CapacitacionWSDLService();
+        soast.client.service.capacitacion.CapacitacionWSDLPortType port = service.getCapacitacionWSDLPort();
+        return port.capacitacionTipo(tipo);
     }
 
 }

@@ -28,33 +28,6 @@ public interface ConcessionWS {
 
     /**
      * 
-     * @param idConcession
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteConcession", targetNamespace = "http://webservice.soast.candlelabs.com/", className = "soast.client.service.concession.DeleteConcession")
-    @ResponseWrapper(localName = "deleteConcessionResponse", targetNamespace = "http://webservice.soast.candlelabs.com/", className = "soast.client.service.concession.DeleteConcessionResponse")
-    @Action(input = "http://webservice.soast.candlelabs.com/ConcessionWS/deleteConcessionRequest", output = "http://webservice.soast.candlelabs.com/ConcessionWS/deleteConcessionResponse")
-    public boolean deleteConcession(
-        @WebParam(name = "idConcession", targetNamespace = "")
-        Long idConcession);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<soast.client.service.concession.Concession>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listConcession", targetNamespace = "http://webservice.soast.candlelabs.com/", className = "soast.client.service.concession.ListConcession")
-    @ResponseWrapper(localName = "listConcessionResponse", targetNamespace = "http://webservice.soast.candlelabs.com/", className = "soast.client.service.concession.ListConcessionResponse")
-    @Action(input = "http://webservice.soast.candlelabs.com/ConcessionWS/listConcessionRequest", output = "http://webservice.soast.candlelabs.com/ConcessionWS/listConcessionResponse")
-    public List<Concession> listConcession();
-
-    /**
-     * 
      * @param expeditionDate
      * @param expeditionPlace
      * @param unitType
@@ -88,5 +61,32 @@ public interface ConcessionWS {
         String unitType,
         @WebParam(name = "licensePlate", targetNamespace = "")
         String licensePlate);
+
+    /**
+     * 
+     * @param idConcession
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteConcession", targetNamespace = "http://webservice.soast.candlelabs.com/", className = "soast.client.service.concession.DeleteConcession")
+    @ResponseWrapper(localName = "deleteConcessionResponse", targetNamespace = "http://webservice.soast.candlelabs.com/", className = "soast.client.service.concession.DeleteConcessionResponse")
+    @Action(input = "http://webservice.soast.candlelabs.com/ConcessionWS/deleteConcessionRequest", output = "http://webservice.soast.candlelabs.com/ConcessionWS/deleteConcessionResponse")
+    public boolean deleteConcession(
+        @WebParam(name = "idConcession", targetNamespace = "")
+        Long idConcession);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<soast.client.service.concession.Concession>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listConcession", targetNamespace = "http://webservice.soast.candlelabs.com/", className = "soast.client.service.concession.ListConcession")
+    @ResponseWrapper(localName = "listConcessionResponse", targetNamespace = "http://webservice.soast.candlelabs.com/", className = "soast.client.service.concession.ListConcessionResponse")
+    @Action(input = "http://webservice.soast.candlelabs.com/ConcessionWS/listConcessionRequest", output = "http://webservice.soast.candlelabs.com/ConcessionWS/listConcessionResponse")
+    public List<Concession> listConcession();
 
 }
