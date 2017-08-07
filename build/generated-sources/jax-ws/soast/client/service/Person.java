@@ -249,9 +249,4 @@ public class Person {
         this.rfc = value;
     }
 
-    @Override
-    public String toString() {
-        return this.name;
-    }
-    
 }

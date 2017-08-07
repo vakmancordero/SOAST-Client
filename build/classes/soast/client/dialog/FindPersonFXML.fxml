@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="697.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="soast.client.dialog.FindPersonController">
+   <children>
+      <TableView fx:id="personsTV" layoutX="14.0" layoutY="60.0" prefHeight="517.0" prefWidth="657.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
+         <columns>
+            <TableColumn prefWidth="144.0" text="Nombre">
+               <cellValueFactory>
+                  <PropertyValueFactory property="name" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="223.0" text="RFC">
+               <cellValueFactory>
+                  <PropertyValueFactory property="rfc" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="142.0" text="Fecha">
+               <cellValueFactory>
+                  <PropertyValueFactory property="birthday" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="147.0" text="Nacionalidad">
+               <cellValueFactory>
+                  <PropertyValueFactory property="nacionality" />
+               </cellValueFactory>
+            </TableColumn>
+         </columns>
+      </TableView>
+      <Label layoutX="20.0" layoutY="22.0" text="Seleccione un concesionario de la tabla:" textFill="#00000095" AnchorPane.leftAnchor="20.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="434.0" layoutY="600.0" onAction="#finish" prefHeight="41.0" prefWidth="227.0" style="-fx-background-color: #2B2E4A;" text="Finalizar" textFill="#ffffffea" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

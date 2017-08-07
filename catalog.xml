@@ -4,4 +4,8 @@
     <system systemId="http://104.131.66.159:8080/PersonWS?xsd=1" uri="xml-resources/web-service-references/PersonWS/wsdl/104.131.66.159_8080/PersonWS.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/PersonWS?wsdl" uri="xml-resources/web-service-references/PersonWS/wsdl/localhost_8080/PersonWS.wsdl"/>
     <system systemId="http://localhost:8080/PersonWS?xsd=1" uri="xml-resources/web-service-references/PersonWS/wsdl/localhost_8080/PersonWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ConcessionWS?wsdl" uri="xml-resources/web-service-references/ConcessionWS/wsdl/localhost_8080/ConcessionWS.wsdl"/>
+    <system systemId="http://localhost:8080/ConcessionWS?xsd=1" uri="xml-resources/web-service-references/ConcessionWS/wsdl/localhost_8080/ConcessionWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/NotificationWS?wsdl" uri="xml-resources/web-service-references/NotificationWS/wsdl/localhost_8080/NotificationWS.wsdl"/>
+    <system systemId="http://localhost:8080/NotificationWS?xsd=1" uri="xml-resources/web-service-references/NotificationWS/wsdl/localhost_8080/NotificationWS.xsd_1.xsd"/>
 </catalog>

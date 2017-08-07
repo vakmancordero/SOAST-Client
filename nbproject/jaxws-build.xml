@@ -33,5 +33,39 @@
         <delete dir="${build.generated.dir}/jax-wsCache/PersonWS"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/soast/client/service"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-PersonWS"/>
+    <target name="wsimport-client-ConcessionWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ConcessionWS"/>
+        <property name="wsdl-ConcessionWS" location="xml-resources/web-service-references/ConcessionWS/wsdl/localhost_8080/ConcessionWS.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ConcessionWS" destdir="${build.generated.dir}/jax-wsCache/ConcessionWS" wsdl="${wsdl-ConcessionWS}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ConcessionWS?wsdl" xnocompile="true" xendorsed="true" package="soast.client.service.concession">
+            <depends file="${wsdl-ConcessionWS}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ConcessionWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ConcessionWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ConcessionWS" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ConcessionWS"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/soast/client/service/concession"/>
+    </target>
+    <target name="wsimport-client-NotificationWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/NotificationWS"/>
+        <property name="wsdl-NotificationWS" location="xml-resources/web-service-references/NotificationWS/wsdl/localhost_8080/NotificationWS.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/NotificationWS" destdir="${build.generated.dir}/jax-wsCache/NotificationWS" wsdl="${wsdl-NotificationWS}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/NotificationWS?wsdl" xnocompile="true" xendorsed="true" package="soast.client.service.notification">
+            <depends file="${wsdl-NotificationWS}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/NotificationWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/NotificationWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-NotificationWS" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/NotificationWS"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/soast/client/service/notification"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-PersonWS, wsimport-client-ConcessionWS, wsimport-client-NotificationWS"/>
 </project>
