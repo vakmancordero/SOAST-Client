@@ -8,4 +8,8 @@
     <system systemId="http://localhost:8080/ConcessionWS?xsd=1" uri="xml-resources/web-service-references/ConcessionWS/wsdl/localhost_8080/ConcessionWS.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/NotificationWS?wsdl" uri="xml-resources/web-service-references/NotificationWS/wsdl/localhost_8080/NotificationWS.wsdl"/>
     <system systemId="http://localhost:8080/NotificationWS?xsd=1" uri="xml-resources/web-service-references/NotificationWS/wsdl/localhost_8080/NotificationWS.xsd_1.xsd"/>
+    <system systemId="http://soa-sep.herokuapp.com/CapacitacionWSDLService?wsdl" uri="xml-resources/web-service-references/CapacitacionWSDLService/wsdl/soa-sep.herokuapp.com/CapacitacionWSDLService.wsdl"/>
+    <system systemId="http://soa-sep.herokuapp.com:80/CapacitacionWSDLService?xsd=1" uri="xml-resources/web-service-references/CapacitacionWSDLService/wsdl/soa-sep.herokuapp.com_80/CapacitacionWSDLService.xsd_1.xsd"/>
+    <system systemId="http://aimos-studio.com.mx:8080/Servicios/WsdlCursoService?wsdl" uri="xml-resources/web-service-references/WsdlCursoService/wsdl/aimos-studio.com.mx_8080/Servicios/WsdlCursoService.wsdl"/>
+    <system systemId="http://aimos-studio.com.mx:8080/Servicios/WsdlCursoService?xsd=1" uri="xml-resources/web-service-references/WsdlCursoService/wsdl/aimos-studio.com.mx_8080/Servicios/WsdlCursoService.xsd_1.xsd"/>
 </catalog>

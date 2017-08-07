@@ -67,5 +67,39 @@
         <delete dir="${build.generated.dir}/jax-wsCache/NotificationWS"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/soast/client/service/notification"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-PersonWS, wsimport-client-ConcessionWS, wsimport-client-NotificationWS"/>
+    <target name="wsimport-client-CapacitacionWSDLService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CapacitacionWSDLService"/>
+        <property name="wsdl-CapacitacionWSDLService" location="xml-resources/web-service-references/CapacitacionWSDLService/wsdl/soa-sep.herokuapp.com/CapacitacionWSDLService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CapacitacionWSDLService" destdir="${build.generated.dir}/jax-wsCache/CapacitacionWSDLService" wsdl="${wsdl-CapacitacionWSDLService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://soa-sep.herokuapp.com/CapacitacionWSDLService?wsdl" xnocompile="true" xendorsed="true" package="soast.client.service.capacitacion">
+            <depends file="${wsdl-CapacitacionWSDLService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CapacitacionWSDLService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CapacitacionWSDLService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-CapacitacionWSDLService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/CapacitacionWSDLService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/soast/client/service/capacitacion"/>
+    </target>
+    <target name="wsimport-client-WsdlCursoService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WsdlCursoService"/>
+        <property name="wsdl-WsdlCursoService" location="xml-resources/web-service-references/WsdlCursoService/wsdl/aimos-studio.com.mx_8080/Servicios/WsdlCursoService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WsdlCursoService" destdir="${build.generated.dir}/jax-wsCache/WsdlCursoService" wsdl="${wsdl-WsdlCursoService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://aimos-studio.com.mx:8080/Servicios/WsdlCursoService?wsdl" xnocompile="true" xendorsed="true" package="soast.client.service.curso">
+            <depends file="${wsdl-WsdlCursoService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WsdlCursoService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WsdlCursoService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WsdlCursoService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WsdlCursoService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/soast/client/service/curso"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-PersonWS, wsimport-client-ConcessionWS, wsimport-client-NotificationWS, wsimport-client-CapacitacionWSDLService, wsimport-client-WsdlCursoService"/>
 </project>

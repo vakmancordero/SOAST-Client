@@ -303,6 +303,133 @@
                                 </AnchorPane>
                             </content>
                         </Tab>
+                  <Tab text="Capacitaciones">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TabPane layoutX="143.0" layoutY="229.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <tabs>
+                                    <Tab text="SEP">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Label alignment="CENTER" layoutX="19.0" layoutY="32.0" prefHeight="27.0" prefWidth="277.0" text="Secretaría de Educación Pública" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="456.0" AnchorPane.topAnchor="32.0">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="129.0" fitWidth="148.0" layoutX="529.0" layoutY="14.0" opacity="0.55" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                                   <image>
+                                                      <Image url="@../images/sep.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <TableView fx:id="capacitacionesTV" layoutX="14.0" layoutY="86.0" prefHeight="200.0" prefWidth="564.0">
+                                                  <columns>
+                                                      <TableColumn fx:id="folio" prefWidth="75.0" text="Folio">
+                                                          <cellValueFactory>
+                                                              <PropertyValueFactory property="folio" />
+                                                          </cellValueFactory>
+                                                      </TableColumn>
+                                                      <TableColumn prefWidth="75.0" text="Nombre">
+                                                          <cellValueFactory>
+                                                              <PropertyValueFactory property="nombre" />
+                                                          </cellValueFactory>
+                                                      </TableColumn>
+                                                      <TableColumn prefWidth="75.0" text="Tipo">
+                                                          <cellValueFactory>
+                                                              <PropertyValueFactory property="tipo" />
+                                                          </cellValueFactory>
+                                                      </TableColumn>
+                                                      <TableColumn prefWidth="75.0" text="Requisitos">
+                                                          <cellValueFactory>
+                                                              <PropertyValueFactory property="requisitos" />
+                                                          </cellValueFactory>
+                                                      </TableColumn>
+                                                      <TableColumn prefWidth="148.0" text="Fecha de Publicación">
+                                                          <cellValueFactory>
+                                                              <PropertyValueFactory property="fechaPublicacion" />
+                                                          </cellValueFactory>
+                                                      </TableColumn>
+                                                  </columns>
+                                                </TableView>
+                                                <Label alignment="CENTER" layoutX="346.0" layoutY="19.0" prefHeight="27.0" prefWidth="277.0" text="Seleccione el tipo de capacitación:">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXComboBox fx:id="capacitacionCB" layoutX="396.0" layoutY="47.0" prefHeight="25.0" prefWidth="180.0" />
+                                                <JFXTextArea fx:id="objetivosTA" layoutX="14.0" layoutY="305.0" prefHeight="335.0" prefWidth="722.0" promptText="Objetivos">
+                                                   <font>
+                                                      <Font name="Century" size="24.0" />
+                                                   </font>
+                                                </JFXTextArea>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="SEDESOL">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Label alignment="CENTER" layoutX="158.0" layoutY="39.0" prefHeight="27.0" prefWidth="277.0" text="Secretaría de desarrollo social" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="317.0" AnchorPane.topAnchor="39.0">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="129.0" fitWidth="148.0" layoutX="529.0" layoutY="14.0" opacity="0.55" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                                   <image>
+                                                      <Image url="@../images/sedesol.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <TableView fx:id="cursosTV" layoutX="14.0" layoutY="86.0" prefHeight="200.0" prefWidth="578.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="folio1" prefWidth="75.0" text="Nombre">
+                                                         <cellValueFactory>
+                                                            <PropertyValueFactory property="nombreCurso" />
+                                                         </cellValueFactory>
+                                                      </TableColumn>
+                                                      <TableColumn prefWidth="132.0" text="Nombre Capacitador">
+                                                         <cellValueFactory>
+                                                            <PropertyValueFactory property="nombreCapacitador" />
+                                                         </cellValueFactory>
+                                                      </TableColumn>
+                                                      <TableColumn prefWidth="93.0" text="Fecha Registro">
+                                                         <cellValueFactory>
+                                                            <PropertyValueFactory property="fechaRegistro" />
+                                                         </cellValueFactory>
+                                                      </TableColumn>
+                                                      <TableColumn prefWidth="89.0" text="Fecha Inicio">
+                                                         <cellValueFactory>
+                                                            <PropertyValueFactory property="fechaInicio" />
+                                                         </cellValueFactory>
+                                                      </TableColumn>
+                                                      <TableColumn prefWidth="89.0" text="Disponibilidad">
+                                                         <cellValueFactory>
+                                                            <PropertyValueFactory property="disponibilidad" />
+                                                         </cellValueFactory>
+                                                      </TableColumn>
+                                                   </columns>
+                                                </TableView>
+                                                <JFXTextArea fx:id="descripcionCursoTA" layoutX="14.0" layoutY="305.0" prefHeight="335.0" prefWidth="299.0" promptText="Descripción">
+                                                   <font>
+                                                      <Font name="Century" size="24.0" />
+                                                   </font>
+                                                </JFXTextArea>
+                                                <JFXTextArea fx:id="objetivosCursoTA" layoutX="391.0" layoutY="305.0" prefHeight="335.0" prefWidth="315.0" promptText="Objetivos">
+                                                   <font>
+                                                      <Font name="Century" size="24.0" />
+                                                   </font>
+                                                </JFXTextArea>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
                     </tabs>
                 </TabPane>
             </children>

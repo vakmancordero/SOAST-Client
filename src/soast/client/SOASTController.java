@@ -2,14 +2,19 @@ package soast.client;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -37,7 +42,12 @@ import javafx.stage.Stage;
 
 import javafx.util.Callback;
 import soast.client.dialog.FindPersonController;
+import soast.client.service.capacitacion.Capacitacion;
+import soast.client.service.capacitacion.Capacitaciones;
 import soast.client.service.concession.Concession;
+import soast.client.service.curso.AllCurso;
+import soast.client.service.curso.AllCursoTypev2;
+import soast.client.service.curso.CursoConsultaReturn;
 
 /**
  *
@@ -77,8 +87,30 @@ public class SOASTController implements Initializable {
     
     @FXML
     private TableView<Concession> concessionsTV;
-    
     private final ObservableList<Concession> concessionsList = FXCollections.observableArrayList();
+    
+    /*  Capacitaciones  */
+    
+    @FXML
+    private TableView<Capacitaciones> capacitacionesTV;
+    
+    private final ObservableList<Capacitaciones> capacitacionesList = FXCollections.observableArrayList();
+    
+    @FXML 
+    private JFXComboBox<String> capacitacionCB;
+    
+    @FXML
+    private JFXTextArea objetivosTA;
+   
+    /*  Cursos  */
+    
+    @FXML
+    private TableView<AllCursoTypev2> cursosTV;
+    
+    private final ObservableList<AllCursoTypev2> cursosList = FXCollections.observableArrayList();
+       
+    @FXML
+    private JFXTextArea objetivosCursoTA, descripcionCursoTA ;
             
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -89,8 +121,18 @@ public class SOASTController implements Initializable {
         this.concessionsList.addAll(SOASTController.listConcession());
         this.concessionsTV.setItems(this.concessionsList);
         
+        this.capacitacionesTV.setItems(this.capacitacionesList);
+        List<AllCursoTypev2> allCurso = SOASTController.allCurso(null).getAllCurso();
+        System.out.println(allCurso.size());
+        this.cursosList.addAll(allCurso);
+        this.cursosTV.setItems(this.cursosList);
+
         this.initColumns();
         this.initConcessionSection();
+        
+        this.initCapacitacionSection();
+        this.initCursosSection();
+
     }
     
     @FXML
@@ -413,6 +455,53 @@ public class SOASTController implements Initializable {
         soast.client.service.notification.NotificationWS_Service service = new soast.client.service.notification.NotificationWS_Service();
         soast.client.service.notification.NotificationWS port = service.getNotificationWSPort();
         return port.sendNotification(personId, subject, message);
+    }
+
+    private static Capacitacion capacitacionTipo(java.lang.String tipo) {
+        soast.client.service.capacitacion.CapacitacionWSDLService service = new soast.client.service.capacitacion.CapacitacionWSDLService();
+        soast.client.service.capacitacion.CapacitacionWSDLPortType port = service.getCapacitacionWSDLPort();
+        return port.capacitacionTipo(tipo);
+    }
+
+    private void initCapacitacionSection() {
+        this.capacitacionCB.getItems().addAll(
+                "Idiomas",
+                "Internacional",
+                "Emprendimiento"
+        );
+        
+        this.capacitacionCB.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> {
+                    
+                    List<Capacitaciones> list = capacitacionTipo(newValue.toLowerCase()).getListaCapacitaciones();
+                    capacitacionesList.setAll(list);
+        });
+        
+        this.capacitacionesTV.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> {
+                    if (newValue != null) 
+                        objetivosTA.setText(newValue.getObjetivos());
+                    
+        });
+        
+    }
+
+    private static AllCurso allCurso(java.lang.String entrada) {
+        soast.client.service.curso.WsdlCursoService service = new soast.client.service.curso.WsdlCursoService();
+        soast.client.service.curso.WsdlCursoPortType port = service.getWsdlCursoPort();
+        return port.allCurso(entrada);
+    }
+
+    private void initCursosSection() {
+        
+        this.cursosTV.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> {
+                    if (newValue != null){
+                        objetivosCursoTA.setText(newValue.getObjetivos());
+                        descripcionCursoTA.setText(newValue.getDescripcion());
+                    } 
+                    
+        });
     }
 
 }

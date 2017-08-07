@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright 2009-2017 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+Contributor(s):
+
+The Original Software is NetBeans. The Initial Developer of the Original
+Software is Sun Microsystems, Inc. Portions Copyright 2009-2010 Sun
+Microsystems, Inc. All Rights Reserved.
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+--><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/WebApplication1/Esquema/WsdlCurso" xmlns:ns="http://xml.netbeans.org/schema/EsquemaTallerXml" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="WsdlCurso" targetNamespace="http://j2ee.netbeans.org/wsdl/WebApplication1/Esquema/WsdlCurso">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/WebApplication1/Esquema/WsdlCurso">
+            <xsd:import namespace="http://xml.netbeans.org/schema/EsquemaTallerXml" schemaLocation="http://aimos-studio.com.mx:8080/Servicios/WsdlCursoService?xsd=1"/>
+        </xsd:schema>
+    </types>
+    <message name="CrearCursoRequest">
+        <part name="datos" element="ns:CursoG"/>
+    </message>
+    <message name="CrearCursoResponse">
+        <part name="datos" element="ns:CursoExitoG"/>
+    </message>
+    <message name="consultaCursoRequest">
+        <part name="nombre" element="ns:nombreCursoConsulta"/>
+    </message>
+    <message name="consultaCursoResponse">
+        <part name="datos" element="ns:CursoConsultaReturn"/>
+    </message>
+    <message name="eliminarCursoRequest">
+        <part name="nombre" element="ns:idCursoEliminar"/>
+    </message>
+    <message name="eliminarCursoResponse">
+        <part name="mensaje" element="ns:mensajeEliminar"/>
+    </message>
+    <message name="editarCursoRequest">
+        <part name="datos" element="ns:editarCurso"/>
+    </message>
+    <message name="editarCursoResponse">
+        <part name="mensajeExito" element="ns:mensajeEditar"/>
+    </message>
+    <message name="allCursoRequest">
+        <part name="entrada" element="ns:allMensajeEntrada"/>
+    </message>
+    <message name="allCursoResponse">
+        <part name="allSalida" element="ns:allCurso"/>
+    </message>
+    <portType name="WsdlCursoPortType">
+        <operation name="CrearCurso">
+            <input name="input1" message="tns:CrearCursoRequest"/>
+            <output name="output1" message="tns:CrearCursoResponse"/>
+        </operation>
+        <operation name="consultaCurso">
+            <input name="input2" message="tns:consultaCursoRequest"/>
+            <output name="output2" message="tns:consultaCursoResponse"/>
+        </operation>
+        <operation name="eliminarCurso">
+            <input name="input3" message="tns:eliminarCursoRequest"/>
+            <output name="output3" message="tns:eliminarCursoResponse"/>
+        </operation>
+        <operation name="editarCurso">
+            <input name="input4" message="tns:editarCursoRequest"/>
+            <output name="output4" message="tns:editarCursoResponse"/>
+        </operation>
+        <operation name="allCurso">
+            <input name="input5" message="tns:allCursoRequest"/>
+            <output name="output5" message="tns:allCursoResponse"/>
+        </operation>
+    </portType>
+    <binding name="WsdlCursoBinding" type="tns:WsdlCursoPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="CrearCurso">
+            <soap:operation/>
+            <input name="input1">
+                <soap:body use="literal"/>
+            </input>
+            <output name="output1">
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultaCurso">
+            <soap:operation/>
+            <input name="input2">
+                <soap:body use="literal"/>
+            </input>
+            <output name="output2">
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="eliminarCurso">
+            <soap:operation/>
+            <input name="input3">
+                <soap:body use="literal"/>
+            </input>
+            <output name="output3">
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="editarCurso">
+            <soap:operation/>
+            <input name="input4">
+                <soap:body use="literal"/>
+            </input>
+            <output name="output4">
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="allCurso">
+            <soap:operation/>
+            <input name="input5">
+                <soap:body use="literal"/>
+            </input>
+            <output name="output5">
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="WsdlCursoService">
+        <port name="WsdlCursoPort" binding="tns:WsdlCursoBinding">
+            <soap:address location="http://aimos-studio.com.mx:8080/Servicios/WsdlCursoService"/>
+        </port>
+    </service>
+    <plnk:partnerLinkType name="WsdlCurso">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="WsdlCursoPortTypeRole" portType="tns:WsdlCursoPortType"/>
+    </plnk:partnerLinkType>
+</definitions>
